@@ -1,5 +1,5 @@
 import * as THREE from "three";
-
+import { OrbitControls } from "three/examples/jsm/Addons.js";
 //renderer setup
 const renderer = new THREE.WebGLRenderer();
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -16,11 +16,14 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(2, 2, 2);
 camera.lookAt(0, 0, 0);
 
+
+const controls = new OrbitControls(camera,renderer.domElement)
+
 //Scene setup
 
 const scene = new THREE.Scene();
 const geoemetry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00d00 });
+const material = new THREE.MeshBasicMaterial({ color: 0x00d000 });
 const cube = new THREE.Mesh(geoemetry, material);
 
 scene.add(cube);
@@ -35,4 +38,11 @@ function animate() {
   renderer.render(scene, camera);
 }
 
+window.addEventListener('resize',()=>{
+  camera.aspect =window.innerWidth/window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+})
 animate();
+
+
