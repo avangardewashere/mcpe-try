@@ -6,6 +6,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
+renderer.setClearColor(0x80a0e0);
 
 // Camera setup
 const camera = new THREE.PerspectiveCamera(
@@ -13,11 +14,12 @@ const camera = new THREE.PerspectiveCamera(
   window.innerWidth / window.innerHeight
 );
 
-camera.position.set(2, 2, 2);
+camera.position.set(-32, 16, -32);
 camera.lookAt(0, 0, 0);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-
+controls.target.set(16,0,16)
+controls.update()
 //Scene setup
 
 const scene = new THREE.Scene();
@@ -71,5 +73,5 @@ window.addEventListener("resize", () => {
 });
 
 setUpLights();
-setUpWorld(2);
+setUpWorld(32);
 animate();
