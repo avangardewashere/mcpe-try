@@ -1,4 +1,4 @@
-import * as Three from "three";
+import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { World } from "../scripts/world";
 
@@ -31,3 +31,9 @@ const world= new World();
 
 world.generate()
 scene.add(world)
+
+const geoemetry = new THREE.BoxGeometry();
+const material = new THREE.MeshLambertMaterial({color:0x00d000});
+
+const cube = new THREE.Mesh(geoemetry,material);
+scene.add(cube);
