@@ -23,3 +23,11 @@ camera.lookAt(0, 0, 0);
 const controls = new OrbitControls(cameraFar, renderer.domElement);
 controls.target.set(16, 0, 16);
 controls.update();
+
+
+//scene setup
+const scene = new THREE.scene();
+const world= new World();
+
+world.generate()
+scene.add(world)
