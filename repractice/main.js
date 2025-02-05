@@ -42,6 +42,14 @@ function setUpLights(){
    const light1 = new THREE.DirectionalLight();
     light1.position.set(1, 1, 1);
     scene.add(light1);
+
+      const light2 = new THREE.DirectionalLight();
+      light2.position.set(-1, 1, 0.5);
+      scene.add(light2);
+    
+      const ambient = new THREE.AmbientLight();
+      ambient.intensity = 0.1;
+      scene.add(ambient);
 }
 
 function animate() {
