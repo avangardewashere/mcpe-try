@@ -38,6 +38,12 @@ const material = new THREE.MeshLambertMaterial({color:0x00d000});
 const cube = new THREE.Mesh(geoemetry,material);
 scene.add(cube);
 
+function setUpLights(){
+   const light1 = new THREE.DirectionalLight();
+    light1.position.set(1, 1, 1);
+    scene.add(light1);
+}
+
 function animate() {
     requestAnimationFrame(animate);
 
@@ -50,6 +56,9 @@ window.addEventListener("resize",()=>{
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth,window.innerHeight);
 
-    
+
 })
+
+setUpLights();
+
 
