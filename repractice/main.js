@@ -37,3 +37,9 @@ const material = new THREE.MeshLambertMaterial({color:0x00d000});
 
 const cube = new THREE.Mesh(geoemetry,material);
 scene.add(cube);
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    renderer.renderer(scene,camera)
+}
