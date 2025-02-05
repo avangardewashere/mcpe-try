@@ -5,7 +5,7 @@ const material = new THREE.MeshLambertMaterial({ color: 0x00d000 });
 // const cube = new THREE.Mesh(geoemetry, material);
 
 export class World extends THREE.Group {
-  constructor(size = 32) {
+  constructor(size = { width: 32, height: 16 }) {
     super();
     this.size = size;
   }
