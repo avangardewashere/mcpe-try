@@ -16,3 +16,6 @@ const camera = new THREE.PerspectiveCamera(
     window.innerWidth / window.innerHeight
   );
   
+
+camera.position.set(-32,16,-32);
+camera.lookAt(0,0,0)
