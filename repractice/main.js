@@ -61,4 +61,7 @@ window.addEventListener("resize",()=>{
 
 setUpLights();
 
+animate();
+
+
 
