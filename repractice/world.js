@@ -6,4 +6,15 @@ export class World extends THREE.Group {
         super();
         this.size = size;
       }
+      generate() {
+        for (let x = 0; x < this.size; x++) {
+          for (let y = 0; y < this.size.height; y++) {
+            for (let z = 0; z < this.size; z++) {
+              const block = new THREE.Mesh(geoemetry, material);
+              block.position.set(x, y, z);
+              this.add(block);
+            }
+          }
+        }
+      }
 }
