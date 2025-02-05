@@ -9,8 +9,10 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
 
+
 //camera setup
 const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight
-);
+    75,
+    window.innerWidth / window.innerHeight
+  );
+  
