@@ -73,6 +73,8 @@ function animate() {
   // cube.rotation.x += 0.01;
   // cube.rotation.y += 0.01;
   renderer.render(scene, camera);
+
+  stats.update();
 }
 
 window.addEventListener("resize", () => {
