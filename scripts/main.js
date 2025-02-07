@@ -25,7 +25,7 @@ controls.update()
 
 const scene = new THREE.Scene();
 const world = new World();
-world.generate();
+world.generate;
 scene.add(world);
 const geoemetry = new THREE.BoxGeometry();
 const material = new THREE.MeshLambertMaterial({ color: 0x00d000 });
