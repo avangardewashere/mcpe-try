@@ -2,6 +2,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { World } from "./world";
 import Stats from 'three/examples/jsm/libs/stats.module.js'
+
+
+const stats = new Stats();
+
+
+
 //renderer setup
 const renderer = new THREE.WebGLRenderer();
 renderer.setPixelRatio(window.devicePixelRatio);
