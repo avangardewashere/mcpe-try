@@ -1,12 +1,10 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { World } from "./world";
-import Stats from 'three/examples/jsm/libs/stats.module.js'
-
+import Stats from "three/examples/jsm/libs/stats.module.js";
 
 const stats = new Stats();
-
-
+document.body.append(stats.dom);
 
 //renderer setup
 const renderer = new THREE.WebGLRenderer();
@@ -26,8 +24,8 @@ camera.position.set(-32, 16, -32);
 camera.lookAt(0, 0, 0);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.target.set(16,0,16)
-controls.update()
+controls.target.set(16, 0, 16);
+controls.update();
 //Scene setup
 
 const scene = new THREE.Scene();
