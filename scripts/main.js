@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { World } from "./world";
 import Stats from "three/examples/jsm/libs/stats.module.js";
+import { createUI } from "./ui";
 
 const stats = new Stats();
 document.body.append(stats.dom);
@@ -30,13 +31,13 @@ controls.update();
 
 const scene = new THREE.Scene();
 const world = new World();
-world.generate;
+world.generate();
 scene.add(world);
-const geoemetry = new THREE.BoxGeometry();
-const material = new THREE.MeshLambertMaterial({ color: 0x00d000 });
-const cube = new THREE.Mesh(geoemetry, material);
+// const geoemetry = new THREE.BoxGeometry();
+// const material = new THREE.MeshLambertMaterial({ color: 0x00d000 });
+// const cube = new THREE.Mesh(geoemetry, material);
 
-scene.add(cube);
+// scene.add(cube);
 
 //adding the light
 function setUpLights() {
@@ -85,4 +86,5 @@ window.addEventListener("resize", () => {
 
 setUpLights();
 // setUpWorld(32);
+createUI(world)
 animate();
